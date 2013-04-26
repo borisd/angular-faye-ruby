@@ -1,0 +1,11 @@
+h1 { font-size: 1.5em; }
+h2 { font-size: 1em; }
+body { color: #333; width: 400px; margin: 50px auto 0 auto; font-size: 1em; }
+input { padding: 3px; width: 100%; }
+button { width: 110px; margin-right: 10px; }
+th { width: 80px; text-align: right; padding-right: 10px; }
+th.outgoing { color: blue; }
+th.incoming { color: green; }
+th.error { color: red; }
+footer { height: 30px; font-size: 0.6em; position: fixed; bottom: 0px; right: 50px; }
+footer a { color: #555; text-decoration: none; }

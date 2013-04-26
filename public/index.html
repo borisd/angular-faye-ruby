@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Angular & Faye</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body ng-app='myApp'>
+    <h1>A Simple Angular & Faye application</h1>
+
+    <div ng-controller="FayeCtrl">
+
+      <h2>Send a message</h2>
+      <form>
+        <input type='text' ng-model="message" name="message" autocomplete="off">
+        <div>
+          <button ng-click="sendClient()">Send via client</button>
+          <button ng-click="sendServer()">Send via server</button>
+        </div>
+      </form>
+
+      <h2>Messages <span>({{messages.length}})<span></h2>
+      <table>
+        <tbody>
+          <tr ng-repeat='msg in messages'>
+            <th class="{{msg.direction}}">[{{msg.direction}}]</th>
+            <td>{{msg.text}}</td>
+          </tr>
+        </ul>
+      </table>
+
+    </div>
+
+    <footer>
+      <a href='http://www.dinkevich.com' target="_blank"> Boris Dinkevich 2013 </a>
+    </footer>
+
+    <script type="text/javascript" src="faye.js"> </script> 
+    <script type="text/javascript" src="angular.js"> </script> 
+    <script type="text/javascript" src="client.js"> </script> 
+
+  </body>
+</html>
