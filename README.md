@@ -6,19 +6,24 @@ This is a demo application with a PubSub server that shows how to communicate wi
 
 ## Backend
 
-PubSub server using [Faye](http://faye.jcoglan.com/) with a [Sinatra](http://www.sinatrarb.com/) app to show how messages can be received and sent from the server.
+PubSub server with two entities:
+
+PubSub server [Faye](http://faye.jcoglan.com/) with a [Redis](http://redis.io/) server as backend.
+
+Sample backend server using a [Sinatra](http://www.sinatrarb.com/) app to show how messages can be received and sent from the server side.
 
 ## Frontend
 Javascript sample based on [AngularJS](angularjs.org) and [Faye's client side library](http://faye.jcoglan.com/browser.html)
 
 ## Usage
 Clone the repo and run it with:
-> ruby app.rb
+> bundle exec ruby app.rb
 
 You will need the following gems:
 
 + sinatra
 + faye 
++ faye-redis (from git not rubygems)
 + thin
 + json
 
