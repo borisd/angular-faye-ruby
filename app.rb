@@ -1,11 +1,21 @@
 require 'sinatra/base'
 require 'faye'
+require 'faye/redis'
 require 'thin'
 require 'json'
 
 EM.run do
   # Start Faye Server
-  Faye::RackAdapter.new(:mount => '/faye', :timeout => 25).listen(3001)
+  Faye::RackAdapter.new(
+    :mount   => '/faye',
+    :timeout => 25,
+    :engine  => {
+      :type => Faye::Redis,
+      :host => '127.0.0.1',
+      :port => 6789,
+      :namespace => 'faye'
+    }
+  ).listen(3001)
 
   # Connect to Faye Server
   $client = Faye::Client.new('http://example.com:3001/faye')
